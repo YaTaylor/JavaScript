@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定时器</title>
+</head>
+<body style="color: red;font-size: 100px;text-align: center">
+    <script>
+        function doWrite(){
+            //count++
+            document.body.innerHTML = ''
+            // 写之前先清空
+            //document.write(count)
+            var dt = new Date('2/1/2019')
+            var iMsec = dt-Date.now()
+			if(iMsec <= 0){
+				return 
+			}
+			// iMsec 毫秒数
+			// 12月24 60 60 1000
+			// 毫秒转换成秒
+			var sec = iMsec / 1000
+			// 天
+		    var day = parseInt(sec / 3600 / 24)
+		    // 小时
+		    var hour = parseInt((sec - day*3600*24)/3600)
+		    // 分 
+		    var min  = parseInt((sec - day*3600*24 - hour*3600)/60)
+		    // 秒
+		    var seconds = parseInt(sec - day*3600*24 - hour*3600 - min*60)
+
+		    var time = '距离放假还有'+day + '天' + hour + '时' + min + '分' + seconds + '秒'
+		    console.log(time)
+            // document.body.innerHTML = sec--
+            document.body.innerHTML = day + '天' + hour + '时' + min + '分' + seconds + '秒'
+
+        }
+        setInterval(doWrite,1000)
+    </script>
+    
+</body>
+</html>

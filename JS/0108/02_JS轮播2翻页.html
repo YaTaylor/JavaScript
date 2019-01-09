@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>轮播2</title>
+</head>
+<body>
+    <!--
+        轮播图的特征
+        1.无线轮播/无线滚动/无线滑动
+        2.页码跳转
+        3.定时滑动/定时滚动
+    -->
+    <!-- 1.1 实现页面结构内容 -->
+    <!-- title 图片的类名,鼠标停止后显示的内容     alt 图片加载失败后显示的内容-->
+    <div id="scroll">
+        <img src="./img/1.jpg" alt="" title="">
+        <img src="./img/2.jpg" alt="">
+        <img src="./img/3.jpg" alt="">
+        <img src="./img/4.jpg" alt="">
+        <img src="./img/1.jpg" alt="" title="">
+    </div>
+    <div style="background-color:red;height:50px;">12345</div>
+    
+</body>
+<script>
+    // 1.1获取滚动区域的宽度
+    var scroll = document.querySelector('#scroll')
+    var s_w = scroll.clientWidth
+
+
+    // 1.2 排列轮播图的位置
+    var imgs = scroll.querySelectorAll('img')
+    for(var index = 0 ; index < imgs.length ; index++){
+        imgs[index].style.left = index*s_w + 'px'
+
+    }
+
+    // 2.1 实现左右按钮
+    var l_btn = document.createElement('div')
+    l_btn.innerText = "《 "
+    l_btn.className  = 'arrow left'
+    scroll.appendChild(l_btn)
+
+    var r_btn = document.createElement('div')
+    r_btn.innerText = " 》"
+    r_btn.className  = 'arrow right'
+    r_btn.style.right = 0;
+    scroll.appendChild(r_btn)
+
+    // 2.2 实现 左右的相应事件
+    l_btn.onclick = function (){
+        moveLeft()
+    }
+    r_btn.onclick = function () {
+        moveRight()
+    }
+
+    // 3.1实现左移动
+    function moveLeft(){
+        page++
+        if (page > imgs.length-1){
+            page = imgs.length - 1
+        }
+        move()
+    }
+    // 右移动
+    function moveRight(){
+        page--
+        if (page < 1){
+            page = 1
+        }
+        move()
+
+    }
+    // 3.2 移动
+    function move(){
+        for(var index = 0; index < imgs.length ; index++){
+            imgs[index].style.left = (index - page + 1)*s_w + 'px'
+        }
+
+    }
+
+    // 3.2.1 声明全局变量记录 页码
+    var page = 1;
+    moveLeft()
+    // setInterval(moveLeft,1000)
+
+
+
+</script>
+</html>

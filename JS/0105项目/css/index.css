@@ -1,0 +1,130 @@
+/* 搜索框开始 */
+#search{
+    height: 450px;
+    width: 100%;
+    background-image: url(../img/headline.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+.search_center{
+    height: 50px;
+    width: 600px;
+    background-color: #333;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -30px 0 0 -300px;
+    opacity: 0.6;
+    /* line-height: 60px; */
+}
+#search input{
+    height: 40px;
+    width: 460px;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: 1px solid black;   
+    font-size: 20px;
+    text-indent: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -27px 0 0 -295px;
+    background-color: #ddd;
+}
+#search button{
+    height: 45px;
+    width: 122px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -27px 0 0 170px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #666;
+    outline: none;
+    border: 1px solid black; 
+
+}
+
+/* 搜索框结束 */
+
+/* 热门旅游展示框开始 */
+#travel{
+    width: 1263px;
+	height: 1150px;
+	/* background-color: #ccc; */
+	margin: 30px auto;
+    text-align: center;
+   
+}
+.section h1{
+    font-size: 50px;
+    text-align: center;
+    color: #666;
+}
+.section p{
+    text-align: center;
+    font-size: 15px;
+}
+#travel figure{
+    width: 380px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 0;
+    margin: 15px 12px;
+    color: #999;
+    position: relative;
+    
+}
+#travel figure img{
+    width: 370px;
+    height: 230px;
+}
+#travel figure strong{
+    font-weight: normal;
+    color: #333;
+}
+#travel figcaption {
+	color: #777;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	font-size: 14px;
+    padding: 7px 0 5px 0;
+    text-align: left;
+}
+#travel figure .price{
+    color: red;
+    position: relative;
+}
+#travel figure .price em{
+    color: #999;
+    position: absolute;
+    right: 10px;
+    top:5px;
+    font-style: normal;
+}
+#travel figure .price b{
+    font-size: 20px;
+}
+#travel figure .price span{
+    float: left;
+    margin-left: 10px;
+}
+#travel figure .type{
+    height: 25px;
+    width: 90px;
+    background-color: #59b200;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+/* 热门旅游展示框结束 */
+

@@ -1,0 +1,283 @@
+@charset "utf-8";
+
+/* 标题开始 */
+#headline{
+    position: relative;
+    height: 300px;
+    /* background: linear-gradient(to right bottom, rgba(0,0,0,0.7), rgba(0,0,0,0)); */
+    background: linear-gradient(to right bottom, rgba(0,0,0,0.7), rgba(0,0,0,0)), url(../img/headline.jpg) no-repeat center;
+}
+.headline-text{
+    position: absolute;
+    top:45%;
+    left:12%;
+    color: aliceblue;
+}
+/* 标题结束 */
+
+/* 展示开始 */
+#show{
+    width: 1263px;
+    /* height: 1200px; */
+    /* background-color: #444; */
+    margin: 30px auto;
+}
+/* #show .show-right, .show-left{
+    display: inline-block;
+} */
+
+/* 右侧 */
+#show .show-right{
+    width: 340px;
+    /* height: 100%; */
+    /* border: 1px solid #eee; */
+    float: right;
+}
+#show .show-right .right-commend{
+    border: 1px solid #eee;
+}
+#show .show-right h2{
+    height: 40px;
+    background-color: #fafafa;
+    font-size: 20px;
+    line-height: 40px;
+    text-indent: 10px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+#show .show-right .tag {
+    padding: 10px 0;
+    text-align: center;
+}
+#show .show-right li{
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #eee;
+    margin: 2px auto;
+    text-align: left;
+    text-indent: 10px;
+    /* margin: 2px 0; */
+}
+#show .show-right li a{
+    display: block;
+    color: #999;
+}
+#show .show-right li a:hover{
+    background-color: #458b00;
+    color: white;
+}
+
+.right-hot{
+    border: 1px solid #eee;
+    margin: 10px 0 0 0;
+
+}
+.right-hot .figure{
+    padding: 10px 0;
+    text-align: center;
+
+}
+
+.right-hot .figure figure{
+    text-align: center;
+    display: inline-block; 
+    margin: 5px;   
+}
+.right-box{
+    margin: 10px 0 0 0;
+    border: 1px solid #eee;
+}
+
+.right-box .box{
+    padding: 10px 0;
+    text-align: center;
+}
+.right-box .box a{
+    display: inline-block;
+	width: 150px;
+    height: 40px;
+    color: #999;
+    background-color: #eee;
+    text-indent: 10px;
+    text-align: left;
+    line-height: 40px;
+    margin: 5px;
+}
+/* 右侧结束 */
+
+/* 左侧开始 */
+#show .show-left{
+    width: 910px;
+    /* height: 100%; */
+    /* border: 1px solid red; */
+    float: left;
+}
+#show .show-left .left-title{
+    height: 45px;
+    background-color: #eee;
+}
+.left-title .title-left{
+    float: left;
+}
+.left-title .title-left li{
+    display: inline-block;
+    height: 40px;
+    width: 150px;
+    line-height: 45px;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+.left-title .title-left li a{
+    display: block;
+    color: #666;
+}
+.left-title .title-left li a:hover{
+    background-color: #fff;
+    border-top:2px solid #458b00;
+
+}
+
+#show .show-left .title-right{
+    float: right;
+    /* background-color: #458b00; */
+    /* border: 1px solid red; */
+}
+.show-left .title-right li{
+    display: inline-block;
+    height: 43px;
+    width: 60px;
+    text-align: center;
+    line-height: 43px;
+}
+.show-left .title-right li a{
+    color: #666;
+}
+.show-left .title-right li a:hover{
+    color: #eee;
+    background-color: #458b00;
+}
+
+.tour{
+    /* border: 1px solid #eee; */
+    /* background-color: #999; */
+    margin: 20px 0 20px 0;
+    position: relative;
+
+}
+/* .tours{
+    position: relative;
+} */
+
+.tour img{
+    /* margin: 4px 0 0 4px; */
+    float: left;
+}
+
+.tour .tour-list{
+    /* display: inline-block; */
+    border: 1px solid #eee;
+    width: 528px;
+    height: 229px;
+    padding: 0;
+    /* background-color: #458b00; */
+    float: right;
+    border: 1px solid #eee;
+    margin: -0.5px 0 0 0;
+    position: relative;
+}
+.tour .tour-img{
+    width: 80px;
+    height: 24px;
+    display: inline-block;
+    background-color: green;
+    position: absolute;
+    left: 0;
+    top:0;
+    text-indent: 8px;
+    color: #fff;
+}
+
+.tour .tour-left{
+    height: 200px;
+    width: 60%;
+    margin-left: 25px;
+    /* background-color: #458b00; */
+    float:left;
+    color: #666;
+}
+.tour .tour-left h2{
+    margin: 10px 0 0 0;
+    font-weight: normal;
+    color: #333;
+}
+
+.tour .tour-right{
+    height: 200px;
+    width: 35%;
+    /* background-color: #458b00; */
+    float: right;
+    position: relative;
+}
+.tour .tour-right .discount{
+    position: absolute;
+	top: 0;
+	right: 0;
+	width: 52px;
+	height: 52px;
+	background: url(../img/disc.png) no-repeat;
+}
+.tour .tour-right .discount span{
+    color: red;
+    display: block;
+    transform: rotate(45deg);
+    text-indent: 13px;
+}
+.tour .tour-right .tour-price{
+    color: red;
+    font-size: 18px;
+    position: absolute;
+    top:30%;
+}
+.tour .tour-right .tour-price strong{
+    font-size: 36px;
+}
+.tour .tour-right .tour-price s{
+    color: #999;
+    font-size: 14px;
+}
+.tour .tour-right .tour-buy{
+    width: 160px;
+    height: 35px;
+    background-color: #f60;
+    position: absolute;
+    top:58%;
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+
+
+
+.tour .tour-last{
+    height: 36px;
+    width: 100%;
+    text-indent: 25px;
+    line-height: 36px;
+    position: absolute;
+    bottom: 0;
+    background-color: #fafafa;
+    color: #666;
+}
+
+
+
+
+
+/* 左侧结束 */
+
+/* 展示结束 */

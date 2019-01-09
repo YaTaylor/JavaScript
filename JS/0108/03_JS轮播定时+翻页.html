@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <title>轮播图的定时+翻页功能</title>
+</head>
+<body>
+    <!--
+        轮播图的特征
+        1.无线轮播/无线滚动/无线滑动
+        2.页码跳转
+        3.定时滑动/定时滚动
+    -->
+    <!-- 1.1 实现页面结构内容 -->
+    <!-- title 图片的类名,鼠标停止后显示的内容     alt 图片加载失败后显示的内容-->
+    <div id="scroll">
+        <img src="./img/1.jpg" alt="" title="">
+        <img src="./img/2.jpg" alt="">
+        <img src="./img/3.jpg" alt="">
+        <img src="./img/4.jpg" alt="">
+        <img src="./img/1.jpg" alt="" title="">
+    </div>
+    <div style="background-color:red;height:50px;">12345</div>
+    
+</body>
+<script>
+    var scroll_el = document.querySelector('#scroll')
+    var s_w = scroll_el.clientWidth
+
+    var imgs = scroll_el.querySelectorAll('img')
+    for(var index = 0 ; index < imgs.length;index++){
+        imgs[index].style.left = index*s_w + 'px'
+    }
+
+    var l_btn = document.createElement('div')
+    l_btn.innerText = "《 "
+    l_btn.className  = 'arrow left'
+    scroll_el.appendChild(l_btn)
+
+    var r_btn = document.createElement('div')
+    r_btn.innerText = " 》"
+    r_btn.className  = 'arrow right'
+    r_btn.style.right = 0;
+    scroll_el.appendChild(r_btn)
+
+    // 3.左右事件的实现
+    l_btn.onclick = function () {
+        clearInterval(timer)
+        moveLeft()
+        timer = setInterval(moveLeft,1000)
+    }
+
+    r_btn.onclick = function(){
+        clearInterval(timer)
+        moveRight()
+        timer = setInterval(moveLeft,1000)
+    }
+    // 4.左右移动事件
+    function moveLeft(){
+        page++
+        if (page > imgs.length - 1){
+            page = imgs.length - 1
+        }
+        move()
+
+    }
+    function moveRight(){
+        page--
+        if(page < 1){
+            page = 0
+        }
+        move()
+
+    }
+
+    // 移动
+    function move(){
+        // 每次移动一个宽度的轮播图
+        for(var index = 0 ; index < imgs.length ; index++){
+            imgs[index].style.left = (index - page)*s_w + 'px'
+        }
+        setTimeout(function(){
+            // 判断是不是最后一张
+            if (page == imgs.length - 1){
+                page = 0
+                
+                // 在将所有图片拉回原来的位置时 每一个img 都自带了动画
+                // 所有要先将动画取消
+                for(var j = 0 ;j<imgs.length;j++){
+                    imgs[j].style.transition = 'none'
+                }
+                // 动画取消之后  要立刻将图片的位置进行还原
+                // 目的是消除 图片切换时的视觉差
+                // 
+                for(var j = 0;j < imgs.length;j++){
+                    imgs[j].style.left = (j-page)*s_w + 'px'
+                }
+                setTimeout(function(){
+                    for(var j = 0 ; j < imgs.length; j++){
+                        imgs[j].style.transition = 'left 0.7s ease-in-out'
+                    }
+                },100)
+                // 延时，为了让第五张（即第一张一样的）放到第一张的位置
+            }
+        },700)
+    }
+    var page = 0
+    timer = setTimeout(moveLeft,1000)
+
+
+     
+
+
+
+</script>
+</html>

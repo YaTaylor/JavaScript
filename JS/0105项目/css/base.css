@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+body,h1,h2,ul,li,figure{
+    margin: 0;
+    padding: 0;
+    /* background-color: red; */
+}
+ul,ol{
+	list-style: outside none none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 头部开始 */
+#head{
+    height: 70px;
+    background-color:#333;
+}
+.head_center{
+    width: 1263px;
+    height: 70px;
+    margin: 0 auto;
+    /* background-color: #fff; */
+}
+.center_left{
+    float: left;
+    height: 70px;
+    width: 30%;
+    position: relative;
+}
+.center_left_img{
+    height: 60px;
+    width: 60px;
+    margin-top:5px;
+}
+.center_left h2{
+    background-color: #333;
+    height: 70px;
+    line-height: 70px;
+    position: absolute;
+    left:70px;
+    top: 0;
+    color: white;
+}
+.center_right{
+    float: right;
+    height: 70px;
+    width: 50%;
+    background-color: #fff;
+}
+.center_right ul{
+    background-color: #333;
+    font-size: 0;
+    
+}
+
+.center_right li{
+    background-color: #333;
+    width: 17%;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    /* font-size: 15px; */
+}
+
+.center_right li a{
+    height: 100%;
+    width: 100%;
+    display: block;
+    font-size: 15px;
+}
+.center_right li a:hover{
+    background-color: black;
+}
+.center_right .active{
+    background-color: black;
+}
+
+/* 头部结束 */
+
+
+/* 底部页脚开始 */
+#footer{
+    height: 360px;
+    background-color: #333;
+    clear: both;
+}
+#footer .top{
+    height: 281px;
+    width: 1263px;
+    /* background-color: #333; */
+    margin: 30px auto;
+}
+#footer .top .block{
+    width: 410px;
+	height: 280px;
+    /* border: 1px solid white; */
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: top;
+}
+
+#footer .top h2{
+    color: #ccc;
+    font-size: 24px;
+    font-weight: normal;
+    padding: 20px 0 0 20px;
+}
+#footer .top hr{
+    width: 90%;
+    border: 1px dashed #666;
+}
+
+#footer ul {
+	font-size: 18px;
+	color: #777;
+	text-indent: 20px;
+	line-height: 2;
+}
+
+.last{
+    height: 80px;
+    background-color: #222;
+    text-align: center;
+    color: #777;
+    line-height: 80px;
+    font-size: 18px;
+    border-top: 1px solid #444;
+}
+
+
+/* 底部页脚结束 */
+
+
+
+

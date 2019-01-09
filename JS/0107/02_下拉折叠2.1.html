@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉折叠</title>
+</head>
+<body>
+    <style>
+        html,body,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .menus{
+            padding-left:20px;
+            padding-top:20px;
+        }
+        .menus > ul > li > ul{
+            display: none;
+        }
+        .active{
+            background-color: #999;
+            color:white;
+        }
+        .menus > ul > li > ul > li > ul{
+            display:none;
+        }
+        .active1 {
+            background-color: pink;
+            color: black;
+        }
+    </style>
+    <div class="menus">
+        <ul>
+            <li>
+                河南省
+                <ul>
+                    <li>
+                        郑州市
+                        <ul>
+                            <li>二七区</li>
+                            <li>中原区</li>
+                            <li>高新区</li>
+                        </ul>
+                    </li>
+                    <li>
+                        新乡市
+                        <ul>
+                            <li>二七区</li>
+                            <li>中原区</li>
+                            <li>高新区</li>
+                        </ul>
+                    </li>
+                    <li>
+                        开封市
+                        <ul>
+                            <li>二七区</li>
+                            <li>中原区</li>
+                            <li>高新区</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                河北省
+                <ul>
+                    <li>石家庄</li>
+                    <li>邯郸</li>
+                    <li>唐山</li>
+                    <li>保定</li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <!-- <div class="navs one two">123456</div> -->
+    <!-- <script>
+        // 删除全部
+        div.className = '' 
+        // 删除一个
+        div.classlist.remove('one')
+    </script> -->
+   
+</body>
+<script>
+    var li_el = document.querySelectorAll('.menus > ul > li');
+    var ul_el = document.querySelectorAll('.menus > ul > li > ul');
+    for (var i=0;i<li_el.length;i++){
+        var item = li_el[i]
+        item.index = i
+        // this 指的是最近的一个
+        console.log('this:',this)
+        item.onclick = function (){           
+            var flag = this.querySelector('ul').style.display
+            console.log('before:',flag)
+            console.log(this.querySelector('ul').style)
+            // 第一次的时候  flag='' 而''!=none，所以执行else flag='none'
+            // 第二次的时候 flag='none' 执行
+            if(flag == 'none' || flag == ''){
+                flag = 'block'
+            }else{
+                flag = 'none'
+            }
+
+            this.querySelector('ul').style.display = flag
+            console.log()
+
+
+            this.className = 'active'
+            // ul_el[this.index].style.display = 'block'
+
+        }
+    }
+    var li1_el = document.querySelectorAll('.menus > ul > li > ul > li')
+    var ul1_el = document.querySelector('.menus > ul > li > ul > li > ul')
+    for (var is=0;is<li1_el.length;is++){
+        var item = li1_el[is]
+        item.index = is
+        // this 指的是最近的一个
+        console.log('this:',this)
+        item.onclick = function (){
+            console.log(this)
+            console.log(item.index)
+
+            // 遍历所有的 市
+            for (var js=0;js < li1_el.length ; js++){
+                li1_el[js].className = ''
+                // ul1_el[js].style.display = 'none'
+
+            }
+            
+            var flag = this.querySelector('ul').style.display
+            console.log('before:',flag)
+            console.log(this.querySelector('ul').style)
+            // 第一次的时候  flag='' 而''!=none，所以执行else flag='none'
+            // 第二次的时候 flag='none' 执行
+            if(flag == 'none' || flag == ''){
+                flag = 'block'
+            }else{
+                flag = 'none'
+            }
+
+            this.querySelector('ul').style.display = flag
+            console.log()
+
+            console.log(this)
+            this.className = 'active1'
+            // ul1_el[this.index].style.display = 'block'
+
+        }
+    }
+
+
+</script>
+</html>
