@@ -32,14 +32,11 @@
             console.log('鼠标弹起')
         }
         div.onmouseover = function(){
-            console.log('鼠标弹起')
-        }
-        div.onmouseup = function(){
             console.log('hover in')
             console.log('鼠标进入')
             this.style.backgroundColor = 'red'
         }
-        div.onmouseup = function(){
+        div.onmouseout = function(){
             console.log('hover out')
             console.log('鼠标移出')
             this.style.backgroundColor = '#f60'

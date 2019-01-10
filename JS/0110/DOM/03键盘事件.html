@@ -9,15 +9,18 @@
 <body>
 
     <script>
+        // 键盘按下
         window.onkeydown = function(ev){
             console.log('key down')
             // console.log(this)
             console.log(ev.key)  // 打印出按下的键
         }
+        // 键盘长按
         window.onkeypress = function(){
             console.log('key press')
 
         }
+        // 键盘弹起
         window.onkeyup = function(){
             console.log('key up')
 

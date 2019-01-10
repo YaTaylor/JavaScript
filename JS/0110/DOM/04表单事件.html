@@ -27,9 +27,13 @@
 
         // 获取input 内容发生改变时触发
         // onchange 当文本内容发生改变且失去焦点时才会被触发
+        
+        // 输出两次
         input_el.onchange = function(){
             console.log(this.value)
         }
+
+        // 失去焦点时获取全部输入内容
         input_el.onselect = function(){
             console.log(this.value)
         }
@@ -37,6 +41,8 @@
         // 如何获取 用户动态输入时的文字跟踪
         // 现代浏览器
         // oninput 是现代浏览器用来监听 input的文本内容发生改变
+        // 跟踪每一次输入的变化
+        
         input_el.oninput = function(){
             console.log(this.value)
             // 如何做到本次输入的和上次输入的有差别
